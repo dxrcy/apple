@@ -1,0 +1,89 @@
+$wrap-size: clamp(10px, 70vh, 90%); // Size of .wrap
+$img-size: 1; // Size of image (1)
+$bg-time: 0.7s; // Time background takes to change color
+$img-time: 0.2s; // Time image takes to change color
+$rotate-time: 0.3s; // Time image takes to rotate
+$rotate-time-angry: 0.1s; // Time image takes to rotate while angry
+$rotate-angle: 4deg; // Amount image rotates
+$hue-angry: -30deg; // Amount image hue changes while angry
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+.contain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  background-color: #5f0108;
+  transition: background-color $bg-time;
+
+  &:active {
+    background-color: #627318;
+
+    .wrap {
+      animation: rotate $rotate-time infinite;
+
+      #green {
+        opacity: 1 !important;
+      }
+    }
+
+    &.angry {
+      background-color: #ABA618;
+
+      .wrap {
+        animation: rotate $rotate-time-angry infinite;
+
+        #green {
+          filter: hue-rotate($hue-angry);
+        }
+      }
+    }
+  }
+
+  .wrap {
+    position: relative;
+    width: $wrap-size;
+    aspect-ratio: 1/1;
+
+    img {
+      position: absolute;
+      width: #{$img-size * 100%};
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &#green {
+        opacity: 0;
+        transition: opacity $img-time;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(#{$rotate-angle});
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(#{-$rotate-angle});
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
