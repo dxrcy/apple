@@ -14,3 +14,9 @@ function makeAngry() {
 function makeNotAngry() {
   $(".contain").removeClass("angry");
 }
+
+window.oncontextmenu = function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  return false;
+};
