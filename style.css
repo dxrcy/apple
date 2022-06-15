@@ -17,22 +17,22 @@ body {
   background-color: #5f0108;
   transition: background-color 0.7s;
 }
-.contain:active {
+.contain:active, .contain.keyDown {
   background-color: #627318;
 }
-.contain:active .wrap {
+.contain:active .wrap, .contain.keyDown .wrap {
   animation: rotate 0.3s infinite;
 }
-.contain:active .wrap #green {
+.contain:active .wrap #green, .contain.keyDown .wrap #green {
   opacity: 1 !important;
 }
-.contain:active.angry {
+.contain:active.angry, .contain.keyDown.angry {
   background-color: #ABA618;
 }
-.contain:active.angry .wrap {
+.contain:active.angry .wrap, .contain.keyDown.angry .wrap {
   animation: rotate 0.1s infinite;
 }
-.contain:active.angry .wrap #green {
+.contain:active.angry .wrap #green, .contain.keyDown.angry .wrap #green {
   filter: hue-rotate(-30deg);
 }
 .contain .wrap {

@@ -26,7 +26,7 @@ body {
   background-color: #5f0108;
   transition: background-color $bg-time;
 
-  &:active {
+  &:active, &.keyDown {
     background-color: #627318;
 
     .wrap {
