@@ -1,5 +1,5 @@
 # Apple
 
-[Apple](https://darccyy.github.io/apple)
+[Apple](https://dxrcy.dev/apple)
 
 ![Apple](image/red.png)
