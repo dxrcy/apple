@@ -1,3 +1,5 @@
+// Please stop trying to STEAL our SECRET source code for this innovative website!
+
 // Stop context menu
 window.oncontextmenu = function (event) {
   event.preventDefault();
