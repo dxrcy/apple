@@ -29,8 +29,8 @@ addEventListener("touchcancel", () => {
     makeNotAngry();
 });
 function makeAngry() {
-    $(".contain").addClass("angry");
+    document.querySelector("main").className = "angry";
 }
 function makeNotAngry() {
-    $(".contain").removeClass("angry");
+    document.querySelector("main").className = "";
 }
